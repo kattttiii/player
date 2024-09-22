@@ -1,0 +1,62 @@
+﻿<Window x:Class="AudioPlayer2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Audio Player" Height="450" Width="800">
+    <Grid>
+
+
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btnSelectFolder" Grid.Row="0" Grid.Column="0" Content="Выберите папку" Click="SelectFolder_Click" Margin="0,0,212,0"/>
+        <Button x:Name="btnHistory" Content="Вся музыка" Click="BtnHistory_Click" Grid.ColumnSpan="2" Margin="188,0,0,0"/>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label x:Name="lblCurrentAudioFile" Content="Аудиофайл не выбран"/>
+        </StackPanel>
+        <Slider x:Name="sliderPosition" Grid.Row="2" Grid.ColumnSpan="2" ValueChanged="SliderPosition_ValueChanged" Minimum="0" Maximum="1" Margin="60,36,60,36" Grid.RowSpan="2"/>
+        <Slider x:Name="sliderVolume" Grid.Row="3" Grid.ColumnSpan="2" Minimum="0" Maximum="1" Value="0" ValueChanged="SliderVolume_ValueChanged" Margin="269,72,168,72" Grid.RowSpan="3"/>
+        <Grid Grid.Row="5" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnPrevious" Grid.Column="2"  Click="BtnPrevious_Click" Grid.ColumnSpan="2" Margin="0,22,114,0"/>
+            <Button x:Name="btnNext" Grid.Column="3"  Click="BtnNext_Click" Grid.ColumnSpan="2" Margin="114,22,0,0"/>
+            <Button x:Name="btnRepeat" Content="OFF" Click="BtnRepeat_Click" Grid.ColumnSpan="3" Margin="114,22,114,0"/>
+            <Button x:Name="btnPlayPause" Grid.Column="3" Click="BtnPlayPause_Click" Margin="0,22,0,0"/>
+            <Button x:Name="btnShuffle" Grid.Column="4" Content="OFF" Click="BtnShuffle_Click" Grid.ColumnSpan="3" Margin="114,22,114,0"/>
+            <Label x:Name="lblCurrentTime" Grid.Column="0" Content="00:00"/>
+            <Label x:Name="lblRemainingTime" Grid.Column="6" HorizontalAlignment="Right" Content="--:--"/>
+        </Grid>
+
+        <MediaElement x:Name="mediaElement" Grid.Row="3" Grid.ColumnSpan="2" LoadedBehavior="Manual"/>
+        <Image Margin="142,47,200,52" Grid.Row="4" Source="/повтор.png" Stretch="Fill" Grid.RowSpan="2"/>
+        <Image Margin="269,26,96,0" Grid.Row="5" Source="/назад.png" Stretch="Fill"/>
+        <Image Margin="380,26,380,6" Grid.Row="5" Source="/пауза.png" Stretch="Fill" Grid.ColumnSpan="2"/>
+        <Image Margin="81,22,254,-4" Grid.Row="5" Source="/вперед.png" Stretch="Fill" Grid.Column="1"/>
+        <Image Margin="211,47,146,52" Grid.Row="4" Source="/перемешать.png" Stretch="Fill" Grid.Column="1" Grid.RowSpan="2"/>
+        <Image Margin="170,48,136,26" Grid.RowSpan="2" Source="/звук.png" Stretch="Fill" Grid.Row="3"/>
+        <Image Margin="10,72,284,46" Grid.RowSpan="3" Source="/P3pH3bC.gif" Stretch="Fill" Grid.Row="2"/>
+
+
+    </Grid>
+</Window>
